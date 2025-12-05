@@ -1,83 +1,108 @@
-# FydBlock - AI-Powered Crypto Trading Platform
+# FydBlock Partner Portal
 
 🚀 **Project Overview**
 
-FydBlock is a high-fidelity, responsive landing page and frontend interface for a next-generation crypto trading bot platform. Designed with a dark, neon‑green aesthetic inspired by premium fintech dashboards, it features immersive glassmorphism effects, interactive 3D elements, and real-time AI-driven strategy generation.
+**FydBlock Partner** is the official affiliate and partner onboarding interface for the FydBlock crypto trading ecosystem. Built with **React** and **Vite**, this high-performance web application allows users to join the affiliate program, calculate potential earnings, and access marketing tools.
 
-The platform showcases a modern trading interface where users can automate strategies using **DCA**, **Grid**, and **Futures bots**. It also includes an **AI Strategy Architect** powered by the **Google Gemini API**, enabling users to generate custom trading strategies tailored to assets and risk preferences.
+The UI features a premium **dark mode** design with neon green accents (`#00FF9D`), glassmorphism, smooth animations, and a fintech-grade layout matching the FydBlock brand identity.
 
 ---
 
 ## ✨ Key Features
-- 🎨 **Immersive Dark Mode UI** — Deep forest/black backgrounds with neon green `#00FF9D` accents and glowing ambient effects.
-- 🤖 **AI Strategy Architect** — Google Gemini API integration for real-time trading strategy generation.
-- 📱 **Fully Responsive** — Optimized for mobile, tablet, and desktop with a custom mobile nav drawer.
-- 🌍 **Interactive 3D Globe** — HTML5 Canvas rendering of a rotating network globe showing global user activity.
-- ⚡ **High Performance** — Built with Vite for fast HMR and optimized builds.
-- 💎 **Glassmorphism** — Heavy use of backdrop filters and frosted UI panels.
+
+- **💸 Interactive Earnings Calculator**  
+  Dynamic slider enabling potential partners to estimate monthly earnings based on referrals.
+
+- **🎨 Modern UI/UX**  
+  Fully responsive design with Tailwind animations (floating cards, infinite marquees, blur effects).
+
+- **🔐 Authentication**  
+  Sign In & Sign Up pages with tab switching, validation, and password visibility toggles.
+
+- **🌐 Exchange Support Showcase**  
+  Auto-scrolling marquee showing Binance, Coinbase, Kraken, Bybit, OKX, and more.
+
+- **📱 Mobile Optimized Navigation**  
+  Custom mobile drawer menu for smooth small-screen experience.
 
 ---
 
 ## 🛠️ Tech Stack
-- **Framework:** React 18
-- **Build Tool:** Vite
-- **Styling:** Tailwind CSS
-- **Icons:** Lucide React
-- **AI:** Google Gemini API
-- **Animations:** CSS Keyframes & Canvas API
 
----
-
-## 🏁 Getting Started
-Follow these steps to run the project locally.
-
-### **Prerequisites**
-- Node.js v18+
-- npm or yarn
-
-### **Installation**
-```bash
-git clone https://github.com/yourusername/fydblock.git
-cd fydblock
-npm install
-```
-
-### **Start Development Server**
-```bash
-npm run dev
-```
-
-### **Build for Production**
-```bash
-npm run build
-```
-
----
-
-## 🚀 Deployment
-FydBlock is optimized for deployment on **Vercel** or **Netlify**.
-
-1. Push your project to GitHub
-2. Import the repo into Vercel/Netlify
-3. Build command auto-detected: `vite build`
+- **Framework:** React 18  
+- **Build Tool:** Vite  
+- **Styling:** Tailwind CSS  
+- **Router:** React Router DOM  
+- **Icons:** Lucide React  
+- **Deployment:** Vercel (configured via `vercel.json`)
 
 ---
 
 ## 📂 Project Structure
-```
-fydblock/
-├── public/             # Static assets
+
+```bash
+fydblock-partner/
+├── public/              # Static assets (logos, favicon, hero images)
 ├── src/
-│   ├── components/     # Reusable UI components
-│   ├── App.jsx         # Main application logic
-│   ├── index.css       # Tailwind + global CSS
-│   └── main.jsx        # React entry point
-├── tailwind.config.js  # Tailwind configuration
-└── vite.config.js      # Vite configuration
+│   ├── components/      # Shared UI components
+│   ├── App.jsx          # Main route definitions
+│   ├── LandingPage.jsx  # Affiliate landing page with calculator
+│   ├── SignIn.jsx       # Login page
+│   ├── SignUp.jsx       # Registration page
+│   ├── Footer.jsx       # Reusable footer component
+│   ├── main.jsx         # App entry point
+│   └── index.css        # Tailwind & global styles
+├── tailwind.config.js   # Tailwind customization
+└── vite.config.js       # Vite configuration
 ```
 
 ---
 
-## 📄 License
-This project is licensed under the **MIT License**.
+## 🏁 Getting Started
 
+### 1. Prerequisites  
+Ensure **Node.js v18+** is installed.
+
+### 2. Installation
+
+```bash
+git clone https://github.com/yourusername/fydblock-partner.git
+cd fydblock-partner
+npm install
+```
+
+### 3. Environment Setup  
+Create a `.env` file (optional):
+
+```env
+VITE_API_BASE_URL=http://localhost:5000
+```
+
+### 4. Run Development Server
+
+```bash
+npm run dev
+```
+
+App will run on:  
+**http://localhost:5173**
+
+---
+
+## 🚀 Deployment (Vercel)
+
+This project supports automatic Vercel deployment.
+
+1. Push your code to GitHub.  
+2. Import your repo into Vercel.  
+3. Add environment variables if needed (`VITE_API_BASE_URL`).  
+4. Deploy — Vercel will detect Vite automatically.
+
+**Build Command:** `npm run build`  
+**Output Directory:** `dist`
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
