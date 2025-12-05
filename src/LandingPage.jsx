@@ -27,10 +27,8 @@ const Affiliate = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#020506] text-white font-sans selection:bg-[#00FF9D] selection:text-black">
-
-      {/* --- Navbar (Matches Image) --- */}
-      <nav className="fixed top-0 w-full z-50 bg-[#020506]/80 backdrop-blur-md border-b border-white/5">
+    <div className="min-h-screen bg-transparent text-white font-sans selection:bg-[#00FF9D] selection:text-black">
+      <nav className="fixed top-0 w-full z-50 bg-[#020506]/30 backdrop-blur-md border-b border-white/5">
         <div className="container mx-auto px-6 h-20 flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center cursor-pointer" onClick={() => navigate('/')}>
