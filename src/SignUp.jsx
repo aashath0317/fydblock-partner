@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowLeft, Eye, EyeOff, Check, Wallet } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import API_BASE_URL from './config'; // Import API URL
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const SignUp = () => {
     const navigate = useNavigate();
@@ -219,3 +219,4 @@ const GoogleIcon = () => (
 );
 
 export default SignUp;
+
