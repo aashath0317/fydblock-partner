@@ -22,9 +22,14 @@ const MARQUEE_LOGOS = [...EXCHANGES, ...EXCHANGES, ...EXCHANGES, ...EXCHANGES];
 const Affiliate = () => {
   const navigate = useNavigate();
   // State for the calculator
-  const [clients, setClients] = useState(10); // Default to 10 to match image
+  const [clients, setClients] = useState(10);
   const earnings = (clients * 125).toLocaleString();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // --- Helper to handle navigation ---
+  const handleJoinClick = () => {
+    navigate('/signup');
+  };
 
   return (
     <div className="min-h-screen bg-transparent text-white font-sans selection:bg-[#00FF9D] selection:text-black">
@@ -38,11 +43,15 @@ const Affiliate = () => {
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-8 text-sm text-gray-400 font-medium">
+            {/* Add links here if needed */}
           </div>
 
-          {/* CTA Button */}
+          {/* CTA Button (FIXED) */}
           <div className="hidden md:block">
-            <button className="bg-[#00FF9D] text-black px-6 py-2 rounded-full font-bold text-sm hover:bg-[#00cc7d] transition-colors shadow-[0_0_15px_rgba(0,255,157,0.4)]">
+            <button
+              onClick={handleJoinClick}
+              className="bg-[#00FF9D] text-black px-6 py-2 rounded-full font-bold text-sm hover:bg-[#00cc7d] transition-colors shadow-[0_0_15px_rgba(0,255,157,0.4)] cursor-pointer"
+            >
               Get Started
             </button>
           </div>
@@ -55,6 +64,24 @@ const Affiliate = () => {
             {isMobileMenuOpen ? <X /> : <Menu />}
           </button>
         </div>
+
+        {/* Mobile Menu Dropdown (Added for completeness) */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden absolute top-20 left-0 w-full bg-[#050B0D] border-b border-white/10 p-6 flex flex-col gap-4 shadow-2xl animate-in slide-in-from-top-5">
+            <button
+              onClick={handleJoinClick}
+              className="w-full bg-[#00FF9D] text-black py-3 rounded-lg font-bold"
+            >
+              Get Started
+            </button>
+            <button
+              onClick={() => navigate('/signin')}
+              className="w-full border border-white/20 text-white py-3 rounded-lg font-bold"
+            >
+              Log In
+            </button>
+          </div>
+        )}
       </nav>
 
       {/* --- Hero Section --- */}
@@ -79,7 +106,11 @@ const Affiliate = () => {
               </p>
 
               <div className="pt-4">
-                <button className="border border-[#00FF9D] text-[#00FF9D] bg-transparent px-10 py-3 rounded-full text-lg font-medium hover:bg-[#00FF9D] hover:text-black transition-all duration-300">
+                {/* Hero Button (FIXED) */}
+                <button
+                  onClick={handleJoinClick}
+                  className="border border-[#00FF9D] text-[#00FF9D]bg-transparent px-10 py-3 rounded-full text-lg font-medium hover:bg-[#00FF9D] hover:text-black transition-all duration-300 cursor-pointer"
+                >
                   Join Now
                 </button>
               </div>
@@ -112,32 +143,31 @@ const Affiliate = () => {
                     max="100"
                     value={clients}
                     onChange={(e) => setClients(parseInt(e.target.value))}
-                    className="w-full h-1.5 bg-gray-700 rounded-lg appearance-none cursor-pointer z-20 relative"
+                    className="w-full h-1.5 bg-gray-700 rounded-lgqh appearance-none cursor-pointer z-20qk relative"
                     style={{
                       backgroundImage: `linear-gradient(to right, white 0%, white ${(clients / 100) * 100}%, #374151 ${(clients / 100) * 100}%, #374151 100%)`
                     }}
                   />
-                  {/* Custom Styles for Slider Thumb via Style Tag (Tailwind doesn't support complex range inputs easily inline) */}
                   <style>{`
-                                        input[type=range]::-webkit-slider-thumb {
-                                            -webkit-appearance: none;
-                                            height: 24px;
-                                            width: 48px;
-                                            border-radius: 999px;
-                                            background: white;
-                                            cursor: pointer;
-                                            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-                                        }
-                                        input[type=range]::-moz-range-thumb {
-                                            height: 24px;
-                                            width: 48px;
-                                            border-radius: 999px;
-                                            background: white;
-                                            border: none;
-                                            cursor: pointer;
-                                            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-                                        }
-                                    `}</style>
+                      input[type=range]::-webkit-slider-thumb {
+                          -webkit-appearance: none;
+                          height: 24px;
+                          width: 48px;
+                          border-radius: 999px;
+                          background: white;
+                          cursor: pointer;
+                          box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+                      }
+                      input[type=range]::-moz-range-thumb {
+                          height: 24px;
+                          width: 48px;
+                          border-radius: 999px;
+                          background: white;
+                          border: none;
+                          cursor: pointer;
+                          box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+                      }
+                  `}</style>
                 </div>
 
                 {/* Earnings Box */}
@@ -178,9 +208,7 @@ const Affiliate = () => {
       </div>
 
       {/* --- Steps Section --- */}
-      <br />
-      <br />
-      <br />
+      <br /><br /><br />
       <section className="container mx-auto px-6 mb-32">
         <h2 className="text-3xl md:text-5xl font-medium text-center text-white mb-20">
           Get Started In Three Easy Steps
@@ -192,6 +220,7 @@ const Affiliate = () => {
             title="Sign up for the Affiliate Program"
             actionLabel="Join Now"
             isActive={true}
+            onClick={handleJoinClick} // Pass click handler
           />
           <StepCard
             number="2. Invite People"
@@ -218,7 +247,10 @@ const Affiliate = () => {
             <h3 className="text-2xl font-bold text-white mb-2">Become our Pro Affiliate</h3>
             <p className="text-gray-400">Earn lifetime commission + trading volume bonus.</p>
           </div>
-          <button className="relative z-10 bg-[#00FF9D] text-black px-8 py-3 rounded-full font-bold hover:bg-[#00cc7d] transition-all shadow-[0_0_20px_rgba(0,255,157,0.3)]">
+          <button
+            onClick={handleJoinClick}
+            className="relative z-10 bg-[#00FF9D] text-black px-8 py-3 rounded-full font-bold hover:bg-[#00cc7d] transition-all shadow-[0_0_20px_rgba(0,255,157,0.3)] cursor-pointer"
+          >
             Join Now
           </button>
         </div>
@@ -248,7 +280,7 @@ const Affiliate = () => {
 
 /* --- Sub Components --- */
 
-const StepCard = ({ number, title, actionLabel, isActive }) => (
+const StepCard = ({ number, title, actionLabel, isActive, onClick }) => (
   <div className={`
     relative p-8 rounded-2xl border transition-all duration-300 h-full flex flex-col justify-between
     ${isActive
@@ -261,7 +293,10 @@ const StepCard = ({ number, title, actionLabel, isActive }) => (
     </div>
 
     {actionLabel && (
-      <button className="w-full bg-[#00FF9D] text-black py-2.5 rounded-lg font-bold text-sm hover:bg-[#00cc7d] transition-colors">
+      <button
+        onClick={onClick}
+        className="w-full bg-[#00FF9D] text-black py-2.5 rounded-lg font-bold text-sm hover:bg-[#00cc7d] transition-colors cursor-pointer"
+      >
         {actionLabel}
       </button>
     )}
