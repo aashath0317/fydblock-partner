@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ArrowLeft, Eye, EyeOff } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+const API_BASE_URL = 'api.fydblock.com/api'
 
 const SignIn = () => {
     const navigate = useNavigate();
@@ -160,4 +160,5 @@ const SignIn = () => {
 };
 
 export default SignIn;
+
 
