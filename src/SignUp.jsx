@@ -57,8 +57,8 @@ const SignUp = () => {
             });
             const data = await response.json();
             if (response.ok) {
-                alert('Account created! Please log in.');
-                navigate('/signin');
+                localStorage.setItem('token', data.token); // <--- Save the token
+                navigate('/dashboard'); // <--- Redirect directly to Dashboard
             } else {
                 alert(data.message || 'Registration failed');
             }
@@ -248,3 +248,4 @@ const CheckItem = ({ label, valid }) => (
 );
 
 export default SignUp;
+
