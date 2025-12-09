@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Layout from './components/Layout';
 import { Copy } from 'lucide-react';
-const API_BASE_URL = 'https:api.fydblock.com/api'
+const API_BASE_URL = 'https://api.fydblock.com/api'
 
 const Dashboard = () => {
     const [stats, setStats] = useState({
