@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ArrowLeft, Eye, EyeOff } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-const API_BASE_URL = 'api.fydblock.com/api'
+const API_BASE_URL = 'https://api.fydblock.com/api'
 
 const SignIn = () => {
     const navigate = useNavigate();
@@ -160,5 +160,6 @@ const SignIn = () => {
 };
 
 export default SignIn;
+
 
 
