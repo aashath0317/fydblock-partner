@@ -26,7 +26,7 @@ const SignIn = () => {
             const data = await response.json();
             if (response.ok) {
                 localStorage.setItem('token', data.token);
-                navigate('/');
+                navigate('/dashboard');
             } else {
                 alert(data.message || 'Login failed');
             }
@@ -40,7 +40,7 @@ const SignIn = () => {
     return (
         <div className="min-h-screen bg-[#050B0D] text-white font-sans relative flex flex-col overflow-hidden">
 
-            {/* --- Background --- */}
+            {/* --- Background --- *}
             <div className="fixed inset-0 pointer-events-none z-0">
                 <div className="absolute top-[20%] left-[-10%] w-[60vw] h-[60vh] bg-[#00FF9D]/5 rounded-full blur-[150px]" />
             </div>
@@ -160,3 +160,4 @@ const SignIn = () => {
 };
 
 export default SignIn;
+
