@@ -26,7 +26,7 @@ const Sidebar = () => {
             {/* Logo Section */}
             <div className="p-8">
                 <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate('/')}>
-                    <img src="/logo.png" alt="FydBlock" className="h-16" />
+                    <img src="/logo.png" alt="FydBlock" className="h-10" />
                     <span className="text-lg font-light text-white tracking-wide opacity-80">. Partner</span>
                 </div>
             </div>
