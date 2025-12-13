@@ -15,7 +15,8 @@ const Sidebar = () => {
     const menuItems = [
         { path: '/dashboard', label: 'Dashboard', icon: <LayoutDashboard size={20} /> },
         { path: '/clients', label: 'Clients', icon: <Users size={20} /> },
-        { path: '/payouts', label: 'Payouts', icon: <Wallet size={20} /> },
+        // UPDATED: Changed 'Payouts' to 'Withdraw Funds'
+        { path: '/withdraw', label: 'Withdraw Funds', icon: <Wallet size={20} /> },
         { path: '/marketing', label: 'Marketing assets', icon: <ShoppingBag size={20} /> },
         { path: '/support', label: 'Support', icon: <MessageCircle size={20} /> },
     ];
