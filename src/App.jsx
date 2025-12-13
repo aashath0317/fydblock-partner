@@ -5,10 +5,10 @@ import SignIn from './SignIn';
 import SignUp from './SignUp';
 import Dashboard from './Dashboard';
 import Clients from './Clients';
-import Payouts from './Payouts';
+import Withdraw from './Withdraw'; // <--- Import New Component
 import Marketing from './Marketing';
 import Support from './Support';
-import Profile from './Profile'; // <--- Import this
+import Profile from './Profile';
 
 const App = () => {
   return (
@@ -20,14 +20,16 @@ const App = () => {
         <Route path="/register" element={<SignUp />} />
         <Route path="/signup" element={<SignUp />} />
 
-        {/* Protected Routes */}
+        {/* Dashboard Routes */}
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/clients" element={<Clients />} />
-        <Route path="/payouts" element={<Payouts />} />
+        <Route path="/withdraw" element={<Withdraw />} /> {/* <--- New Route */}
+        {/* Note: 'Payouts' removed or redirected to Withdraw if preferred, or kept for history */}
+        <Route path="/payouts" element={<Withdraw />} />
+
         <Route path="/marketing" element={<Marketing />} />
         <Route path="/support" element={<Support />} />
-
-        <Route path="/profile" element={<Profile />} /> {/* <--- New Route */}
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </div>
   );
