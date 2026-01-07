@@ -15,8 +15,8 @@ const Sidebar = () => {
     const menuItems = [
         { path: '/dashboard', label: 'Dashboard', icon: <LayoutDashboard size={20} /> },
         { path: '/clients', label: 'Clients', icon: <Users size={20} /> },
-        // UPDATED: Changed 'Payouts' to 'Withdraw Funds'
-        { path: '/withdraw', label: 'Withdraw Funds', icon: <Wallet size={20} /> },
+        // UPDATED: Changed 'Withdraw Funds' to 'Payouts'
+        { path: '/withdraw', label: 'Payouts', icon: <Wallet size={20} /> },
         { path: '/marketing', label: 'Marketing assets', icon: <ShoppingBag size={20} /> },
         { path: '/support', label: 'Support', icon: <MessageCircle size={20} /> },
     ];
@@ -40,8 +40,8 @@ const Sidebar = () => {
                             key={item.path}
                             onClick={() => navigate(item.path)}
                             className={`w-full flex items-center gap-4 px-4 py-3.5 rounded-lg transition-all duration-200 group ${isActive
-                                    ? 'bg-[#00FF9D] text-black shadow-[0_0_15px_rgba(0,255,157,0.3)] font-semibold'
-                                    : 'text-gray-400 hover:text-white hover:bg-white/5'
+                                ? 'bg-[#00FF9D] text-black shadow-[0_0_15px_rgba(0,255,157,0.3)] font-semibold'
+                                : 'text-gray-400 hover:text-white hover:bg-white/5'
                                 }`}
                         >
                             <span className={isActive ? 'text-black' : 'text-gray-400 group-hover:text-white'}>
@@ -52,23 +52,6 @@ const Sidebar = () => {
                     );
                 })}
             </nav>
-
-            {/* Profile Section */}
-            <div className="p-6 border-t border-white/5 bg-[#080D0F]">
-                <div
-                    onClick={() => navigate('/profile')}
-                    className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/5 cursor-pointer transition-colors"
-                >
-                    <div className="w-10 h-10 rounded-full bg-gray-600 overflow-hidden border border-white/10">
-                        <div className="w-full h-full bg-gradient-to-br from-gray-500 to-gray-700"></div>
-                    </div>
-
-                    <div className="flex-1 overflow-hidden">
-                        <h4 className="text-white text-sm font-medium truncate">Akeel Aashath</h4>
-                        <p className="text-[#00FF9D] text-[10px] uppercase font-bold tracking-wider">Pro Plan Active</p>
-                    </div>
-                </div>
-            </div>
         </div>
     );
 };

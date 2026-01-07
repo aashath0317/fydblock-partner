@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from './components/Layout';
-import { Table } from './Dashboard'; // Reusing the table component
+import Table from './components/Table'; // Reusing the table component
 
 const Clients = () => {
     return (
